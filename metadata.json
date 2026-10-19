@@ -1,0 +1,6 @@
+{
+  "name": "RV Events and Management Farrukhabad",
+  "description": "Premier luxury event management company in Farrukhabad. Royal weddings, grand bride & groom entries, theme decor, catering & party planning by Vishal.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
