@@ -23,21 +23,21 @@ export default function BudgetEstimator() {
   ]);
 
   const eventTypeOptions = [
-    { id: 'wedding', name: 'Royal Wedding & Reception', baseCost: , desc: 'Complete mandap, entry, stage & ritual decor' },
-    { id: 'haldi', name: 'Haldi & Mehandi Theme', baseCost:, desc: 'Yellow marigold, swing, urli & photobooth' },
-    { id: 'engagement', name: 'Engagement & Ring Ceremony', baseCost: , desc: 'Floral ring backdrop, stage & ambient lights' },
-    { id: 'birthday', name: 'Grand Birthday Party', baseCost:, desc: 'Theme balloons, LED sign, cake table & sound' },
-    { id: 'anniversary', name: 'Anniversary Celebration', baseCost: , desc: 'Romantic couple stage, fairy lights & music' },
-    { id: 'corporate', name: 'School / Corporate Event', baseCost: , desc: 'Truss, sound system, seating & backdrop' },
+    { id: 'wedding', name: 'Royal Wedding & Reception', baseCost: 45000, desc: 'Complete mandap, entry, stage & ritual decor' },
+    { id: 'haldi', name: 'Haldi & Mehandi Theme', baseCost: 15000, desc: 'Yellow marigold, swing, urli & photobooth' },
+    { id: 'engagement', name: 'Engagement & Ring Ceremony', baseCost: 25000, desc: 'Floral ring backdrop, stage & ambient lights' },
+    { id: 'birthday', name: 'Grand Birthday Party', baseCost: 12000, desc: 'Theme balloons, LED sign, cake table & sound' },
+    { id: 'anniversary', name: 'Anniversary Celebration', baseCost: 15000, desc: 'Romantic couple stage, fairy lights & music' },
+    { id: 'corporate', name: 'School / Corporate Event', baseCost: 28000, desc: 'Truss, sound system, seating & backdrop' },
   ] as const;
 
   const addonsList: AddonOption[] = [
-    { id: 'grand-entry', name: 'Grand Bride/Groom Entry', cost: , description: 'Dry ice fog + 8 cold pyro sparkulars + floral chhatar' },
-    { id: 'royal-stage', name: 'Imperial Stage Decoration', cost: , description: 'Gold pillars, fresh imported roses, chandelier backdrop' },
+    { id: 'grand-entry', name: 'Grand Bride/Groom Entry', cost: 15000, description: 'Dry ice fog + 8 cold pyro sparkulars + floral chhatar' },
+    { id: 'royal-stage', name: 'Imperial Stage Decoration', cost: 20000, description: 'Gold pillars, fresh imported roses, chandelier backdrop' },
     { id: 'revolving-stage', name: 'Hydraulic Revolving Varmala Stage', cost: 18000, description: '360° rotating flower platform with CO2 jets' },
-    { id: 'dj-sound', name: 'JBL / Line Array DJ & Trussing', cost: , description: 'Heavy bass sound setup with moving beam heads' },
-    { id: 'home-lighting', name: 'House & Courtyard Fairy Lights', cost:, description: 'Full exterior ambient LED warm strings & torans' },
-    { id: 'photo-booth', name: 'Royal Vintage Photo Booth', cost: , description: 'Custom printed theme backdrop with fun handheld props' },
+    { id: 'dj-sound', name: 'JBL / Line Array DJ & Trussing', cost: 15000, description: 'Heavy bass sound setup with moving beam heads' },
+    { id: 'home-lighting', name: 'House & Courtyard Fairy Lights', cost: 8000, description: 'Full exterior ambient LED warm strings & torans' },
+    { id: 'photo-booth', name: 'Royal Vintage Photo Booth', cost: 6000, description: 'Custom printed theme backdrop with fun handheld props' },
   ];
 
   const currentEvent = eventTypeOptions.find(e => e.id === eventType) || eventTypeOptions[0];
@@ -72,14 +72,13 @@ export default function BudgetEstimator() {
       .join(', ');
 
     const message = `*Namaste Vishal ji (RV Events Farrukhabad)* 👑
-I calculated an event budget estimate on your website:
+I checked your website and want to discuss an event plan:
 
 📌 *Event Type:* ${currentEvent.name}
 👥 *Expected Guests:* ${guestCount} persons
 📍 *Venue Type:* ${venueType === 'lawn' ? 'Open Lawn / Ground' : venueType === 'banquet' ? 'Banquet Hall' : 'Home / Courtyard'}
 ✨ *Add-on Services Selected:* ${selectedAddonNames || 'None'}
-🍲 *Catering Included:* ${includeCatering ? `Yes (${guestCount} plates @ ₹${cateringPerPlate}/plate)` : 'No / Decor Only'}
-💰 *Estimated Range:* ${formatINR(totalMin)} - ${formatINR(totalMax)}
+🍲 *Catering Included:* ${includeCatering ? `Yes (${guestCount} plates)` : 'No / Decor Only'}
 
 Please check date availability and send me your best customized package for Farrukhabad. Thank you!`;
 
@@ -87,22 +86,22 @@ Please check date availability and send me your best customized package for Farr
   };
 
   return (
-    <section id="calculator" className="relative py-20 bg-neutral-950 border-t border-b border-amber-500/20">
+    <section id="calculator" className="relative py-20 bg-neutral-950 border-t border-b border-amber-500/25">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Title */}
         <div className="text-center max-w-3xl mx-auto mb-12">
           <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-amber-950/40 border border-amber-500/30 text-amber-300 text-xs font-semibold mb-3">
             <Calculator className="w-3.5 h-3.5 text-amber-400" />
-            <span>Smart Farrukhabad Event Budget Planner</span>
+            <span>Smart Farrukhabad Event Planner</span>
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-black text-white tracking-tight">
             Interactive Event{' '}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-200 via-amber-400 to-yellow-500">
-              Cost & Package Estimator
+              Customizer & Planner
             </span>
           </h2>
           <p className="mt-3 text-sm sm:text-base text-neutral-300">
-            Get an instant transparent estimate tailored for weddings and parties in Farrukhabad, Fatehgarh, and nearby towns. Send directly to Vishal on WhatsApp for final confirmation!
+            Select your preferences tailored for weddings and parties in Farrukhabad, Fatehgarh, and send your requirements directly to Vishal on WhatsApp!
           </p>
         </div>
 
@@ -128,7 +127,7 @@ Please check date availability and send me your best customized package for Farr
                     }`}
                   >
                     <div className="font-semibold text-xs sm:text-sm text-white">{item.name}</div>
-                    <div className="text-[10px] text-amber-400/80 mt-0.5">From {formatINR(item.baseCost)}</div>
+                    <div className="text-[10px] text-amber-400/80 mt-0.5">{item.desc}</div>
                   </button>
                 ))}
               </div>
@@ -218,7 +217,6 @@ Please check date availability and send me your best customized package for Farr
                       <div className="flex-1">
                         <div className="flex items-center justify-between">
                           <span className="text-xs font-semibold text-white">{addon.name}</span>
-                          <span className="text-[11px] font-bold text-amber-400">+{formatINR(addon.cost)}</span>
                         </div>
                         <p className="text-[10px] text-neutral-400 mt-0.5 leading-snug">{addon.description}</p>
                       </div>
@@ -259,54 +257,44 @@ Please check date availability and send me your best customized package for Farr
                 <div className="flex items-center gap-2">
                   <Sparkles className="w-4 h-4 text-amber-400" />
                   <span className="text-xs font-bold uppercase tracking-wider text-amber-300">
-                    Farrukhabad Royal Package
+                    RV Events Farrukhabad
                   </span>
                 </div>
                 <span className="text-[10px] px-2 py-0.5 rounded bg-amber-950 text-amber-300 font-medium border border-amber-500/30">
-                  Customizable
+                  Ready to Book
                 </span>
               </div>
 
               <div className="mt-6 text-center">
-                <span className="text-xs text-neutral-400">Estimated Total Investment</span>
-                <div className="text-3xl sm:text-4xl font-serif font-black text-transparent bg-clip-text bg-gradient-to-r from-amber-200 via-yellow-400 to-amber-500 mt-1">
-                  {formatINR(totalMin)} – {formatINR(totalMax)}
+                <span className="text-xs text-neutral-400">Selected Event Summary</span>
+                <div className="text-xl sm:text-2xl font-serif font-bold text-amber-300 mt-1">
+                  {currentEvent.name}
                 </div>
-                <p className="text-[11px] text-neutral-400 mt-1">
-                  *Indicative budget. Exact price may vary slightly based on seasonal flower rates & customized staging.
+                <p className="text-xs text-neutral-300 mt-2">
+                  Guests: <span className="text-white font-bold">{guestCount}</span> | Venue: <span className="text-white font-bold capitalize">{venueType}</span>
                 </p>
               </div>
 
-              {/* Breakdown List */}
+              {/* Selection List */}
               <div className="mt-6 space-y-2.5 text-xs text-neutral-300 border-t border-neutral-800 pt-4">
                 <div className="flex justify-between">
-                  <span className="text-neutral-400">Base {currentEvent.name}:</span>
-                  <span className="font-semibold text-white">{formatINR(baseCost)}</span>
+                  <span className="text-neutral-400">Selected Add-ons:</span>
+                  <span className="font-semibold text-amber-400">{selectedAddons.length} Items</span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="text-neutral-400">Guest Logistics ({guestCount} pax):</span>
-                  <span className="font-semibold text-white">{guestLogisticsFactor > 0 ? formatINR(guestLogisticsFactor) : 'Included'}</span>
+                  <span className="text-neutral-400">Catering Service:</span>
+                  <span className="font-semibold text-white">{includeCatering ? 'Included' : 'Not Included'}</span>
                 </div>
-                <div className="flex justify-between">
-                  <span className="text-neutral-400">Selected Royal Add-ons ({selectedAddons.length}):</span>
-                  <span className="font-semibold text-amber-400">{formatINR(addonsTotal)}</span>
-                </div>
-                {includeCatering && (
-                  <div className="flex justify-between text-emerald-400">
-                    <span>Catering ({guestCount} × ₹{cateringPerPlate}):</span>
-                    <span className="font-semibold">{formatINR(cateringCost)}</span>
-                  </div>
-                )}
               </div>
 
               {/* Trust Badges */}
               <div className="mt-6 p-3 rounded-xl bg-amber-950/30 border border-amber-500/30 text-[11px] text-amber-200/90 space-y-1">
                 <div className="flex items-center gap-1.5 font-semibold text-amber-300">
                   <ShieldCheck className="w-3.5 h-3.5" />
-                  <span>Vishal’s Direct Price Guarantee</span>
+                  <span>Vishal’s Direct Best Quotation</span>
                 </div>
                 <p className="text-[10px] text-neutral-400">
-                  No hidden middleman commission. Transparent itemized breakdown before any advance payment.
+                  Get exact customized pricing directly on WhatsApp based on your venue size and flower decoration choices.
                 </p>
               </div>
             </div>
@@ -320,11 +308,11 @@ Please check date availability and send me your best customized package for Farr
                 className="w-full flex items-center justify-center gap-2 py-3.5 px-4 rounded-xl text-sm font-bold text-neutral-950 bg-gradient-to-r from-emerald-400 to-green-500 hover:brightness-110 shadow-[0_0_20px_rgba(16,185,129,0.35)] transition-all transform hover:-translate-y-0.5 active:translate-y-0 cursor-pointer"
               >
                 <MessageCircle className="w-5 h-5 text-neutral-950" />
-                <span>Send This Estimate to WhatsApp</span>
+                <span>Send Details to WhatsApp</span>
               </a>
               <div className="text-center mt-2">
                 <span className="text-[10px] text-neutral-400">
-                  Vishal will review this exact estimate and respond on WhatsApp within 15 minutes!
+                  Vishal will review your choices and reply on WhatsApp within 15 minutes!
                 </span>
               </div>
             </div>
