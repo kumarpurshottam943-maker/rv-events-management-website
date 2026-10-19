@@ -23,21 +23,21 @@ export default function BudgetEstimator() {
   ]);
 
   const eventTypeOptions = [
-    { id: 'wedding', name: 'Royal Wedding & Reception', baseCost: 45000, desc: 'Complete mandap, entry, stage & ritual decor' },
-    { id: 'haldi', name: 'Haldi & Mehandi Theme', baseCost: 15000, desc: 'Yellow marigold, swing, urli & photobooth' },
-    { id: 'engagement', name: 'Engagement & Ring Ceremony', baseCost: 25000, desc: 'Floral ring backdrop, stage & ambient lights' },
-    { id: 'birthday', name: 'Grand Birthday Party', baseCost: 8000, desc: 'Theme balloons, LED sign, cake table & sound' },
-    { id: 'anniversary', name: 'Anniversary Celebration', baseCost: 12000, desc: 'Romantic couple stage, fairy lights & music' },
-    { id: 'corporate', name: 'School / Corporate Event', baseCost: 28000, desc: 'Truss, sound system, seating & backdrop' },
+    { id: 'wedding', name: 'Royal Wedding & Reception', baseCost: , desc: 'Complete mandap, entry, stage & ritual decor' },
+    { id: 'haldi', name: 'Haldi & Mehandi Theme', baseCost:, desc: 'Yellow marigold, swing, urli & photobooth' },
+    { id: 'engagement', name: 'Engagement & Ring Ceremony', baseCost: , desc: 'Floral ring backdrop, stage & ambient lights' },
+    { id: 'birthday', name: 'Grand Birthday Party', baseCost:, desc: 'Theme balloons, LED sign, cake table & sound' },
+    { id: 'anniversary', name: 'Anniversary Celebration', baseCost: , desc: 'Romantic couple stage, fairy lights & music' },
+    { id: 'corporate', name: 'School / Corporate Event', baseCost: , desc: 'Truss, sound system, seating & backdrop' },
   ] as const;
 
   const addonsList: AddonOption[] = [
-    { id: 'grand-entry', name: 'Grand Bride/Groom Entry', cost: 15000, description: 'Dry ice fog + 8 cold pyro sparkulars + floral chhatar' },
-    { id: 'royal-stage', name: 'Imperial Stage Decoration', cost: 20000, description: 'Gold pillars, fresh imported roses, chandelier backdrop' },
+    { id: 'grand-entry', name: 'Grand Bride/Groom Entry', cost: , description: 'Dry ice fog + 8 cold pyro sparkulars + floral chhatar' },
+    { id: 'royal-stage', name: 'Imperial Stage Decoration', cost: , description: 'Gold pillars, fresh imported roses, chandelier backdrop' },
     { id: 'revolving-stage', name: 'Hydraulic Revolving Varmala Stage', cost: 18000, description: '360° rotating flower platform with CO2 jets' },
-    { id: 'dj-sound', name: 'JBL / Line Array DJ & Trussing', cost: 14000, description: 'Heavy bass sound setup with moving beam heads' },
-    { id: 'home-lighting', name: 'House & Courtyard Fairy Lights', cost: 10000, description: 'Full exterior ambient LED warm strings & torans' },
-    { id: 'photo-booth', name: 'Royal Vintage Photo Booth', cost: 6000, description: 'Custom printed theme backdrop with fun handheld props' },
+    { id: 'dj-sound', name: 'JBL / Line Array DJ & Trussing', cost: , description: 'Heavy bass sound setup with moving beam heads' },
+    { id: 'home-lighting', name: 'House & Courtyard Fairy Lights', cost:, description: 'Full exterior ambient LED warm strings & torans' },
+    { id: 'photo-booth', name: 'Royal Vintage Photo Booth', cost: , description: 'Custom printed theme backdrop with fun handheld props' },
   ];
 
   const currentEvent = eventTypeOptions.find(e => e.id === eventType) || eventTypeOptions[0];
